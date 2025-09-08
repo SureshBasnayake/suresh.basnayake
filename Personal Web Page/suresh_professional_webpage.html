@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suresh Lasantha Basnayake - Banking & Administrative Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>') repeat;
+            opacity: 0.1;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #6c757d;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            color: #667eea;
+        }
+        
+        .main-content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #764ba2;
+        }
+        
+        .objective {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .experience-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .experience-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .job-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            font-size: 1.1em;
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .duration {
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .achievements {
+            list-style: none;
+        }
+        
+        .achievements li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+            color: #555;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .strength-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .strength-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .strength-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                padding: 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-photo">
+                📸
+            </div>
+            <h1>Suresh Lasantha Basnayake</h1>
+            <p class="subtitle">Experienced Banking & Administrative Professional</p>
+        </header>
+        
+        <section class="contact-info">
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>suresh.l.basnayake@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span>0224117483</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>2a Belfast Street, Hillsborough, Auckland 1042</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <a href="https://www.linkedin.com/in/suresh-lasantha-basnayake-a01264a6" target="_blank" style="text-decoration: none; color: inherit;">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+        
+        <main class="main-content">
+            <section class="section">
+                <h2 class="section-title">Professional Objective</h2>
+                <div class="objective">
+                    Experienced banking professional with 16+ years of comprehensive experience in Sri Lankan banking operations, from teller services to branch management and internal auditing. Currently seeking entry-level opportunities in New Zealand's banking or administrative sectors to leverage strong operational skills, customer service expertise, and proven ability to excel in fast-paced, multicultural environments. Committed to contributing to organizational success while building upon established foundation in financial services and team leadership.
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Team Member</h3>
+                    <div class="company">KFC Botany, Auckland</div>
+                    <div class="duration">February 2025 - Present</div>
+                    <ul class="achievements">
+                        <li>Excelling in fast-paced, customer-focused environment requiring multi-priority management</li>
+                        <li>Contributing positively to team dynamics and maintaining service excellence under pressure</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Administrative Supporter</h3>
+                    <div class="company">Commercial Cleaning Company, Auckland</div>
+                    <div class="duration">2019 - 2024 (5 years)</div>
+                    <ul class="achievements">
+                        <li>Oversaw daily operations and addressed inquiries from co-workers and clients to ensure high service levels</li>
+                        <li>Maintained superior customer service and effective teamwork resulting in minimal complaints</li>
+                        <li>Optimized inventory control measures to ensure adequate stock levels</li>
+                        <li>Implemented automated job scheduling and salary calculation systems using MS Excel</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Assistant Branch Manager</h3>
+                    <div class="company">Sampath Bank PLC, Peliyagoda Branch (Urban)</div>
+                    <div class="duration">June 2018 - May 2019</div>
+                    <ul class="achievements">
+                        <li>Managed urban branch operations with high-volume customer transactions</li>
+                        <li>Supervised teller operations and account opening procedures</li>
+                        <li>Maintained operational excellence in fast-paced city banking environment</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Executive - Operations Department</h3>
+                    <div class="company">Sampath Bank PLC</div>
+                    <div class="duration">May 2017 - June 2018</div>
+                    <ul class="achievements">
+                        <li>Handled central operations functions and procedural implementations</li>
+                        <li>Supported branch network operational requirements</li>
+                        <li>Coordinated between branches and head office operations</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Branch Manager</h3>
+                    <div class="company">Sampath Bank PLC, Deniyaya Branch</div>
+                    <div class="duration">February 2015 - May 2017</div>
+                    <ul class="achievements">
+                        <li>Led branch to achieve 120% profit target in 2016, securing 4-month additional bonus for all staff</li>
+                        <li>Promoted 3 team members and achieved personal promotion to Executive Grade II</li>
+                        <li>Organized community CSR initiatives including inter-school quiz competition with 22 local schools</li>
+                        <li>Implemented innovative customer queue management system using commercial video displays</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Assistant Branch Manager</h3>
+                    <div class="company">Sampath Bank PLC, Deniyaya Branch</div>
+                    <div class="duration">June 2012 - February 2015</div>
+                    <ul class="achievements">
+                        <li>Supported branch management in achieving operational targets and customer satisfaction</li>
+                        <li>Coordinated team activities and customer relationship management initiatives</li>
+                        <li>Assisted in implementing stress-reduction measures for customer service areas</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Internal Auditor & Operational Head</h3>
+                    <div class="company">Sampath Bank PLC - Internal Audit Department</div>
+                    <div class="duration">November 2008 - June 2012</div>
+                    <ul class="achievements">
+                        <li>Conducted operational audits across 190+ branches throughout Sri Lanka</li>
+                        <li>Promoted to Operational Head of Branch Audit Team managing 5 audit teams</li>
+                        <li>Prepared annual audit schedules and risk rating factors for audit checklists</li>
+                        <li>Managed team budgets including accommodation and meal allocations during audit periods</li>
+                        <li>Analyzed financial documents to identify discrepancies and provided process improvement recommendations</li>
+                        <li>Promoted to Executive Grade I in 2012</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Jewellery Pawning Officer & Branch Assistant Manager</h3>
+                    <div class="company">Sampath Bank PLC, Deraniyagala Branch</div>
+                    <div class="duration">August 2005 - November 2008</div>
+                    <ul class="achievements">
+                        <li>Processed 70+ daily pawning customer requests while managing team of 4 staff</li>
+                        <li>Served as Acting Branch Manager for 1 month demonstrating leadership capability</li>
+                        <li>Scrutinized and verified all teller transactions and account opening applications</li>
+                        <li>Managed day-end vault closure procedures ensuring security compliance</li>
+                        <li>Achieved first promotion from Junior Executive 1 to Junior Executive 2 within 4.5 years</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Accounts Opening Officer</h3>
+                    <div class="company">Sampath Bank PLC</div>
+                    <div class="duration">December 2004 - August 2005</div>
+                    <ul class="achievements">
+                        <li>Processed average 50 weekly account opening requests with maximum of 25 daily applications</li>
+                        <li>Cross-sold banking products while providing customer consultations on best options</li>
+                        <li>Managed inbound and outbound customer calls providing solutions to queries</li>
+                        <li>Supervised 4 tellers during peak periods while maintaining own account opening responsibilities</li>
+                        <li>Maintained adequate stock levels through effective day-end stock balancing</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Bank Teller</h3>
+                    <div class="company">Sampath Bank PLC</div>
+                    <div class="duration">June 2003 - December 2004</div>
+                    <ul class="achievements">
+                        <li>Promoted to Head Teller/Head Cashier within 7 months of starting</li>
+                        <li>Handled 250+ average daily transactions including cash deposits, withdrawals, and cheque processing</li>
+                        <li>Achieved maximum record of 425 daily customer transactions</li>
+                        <li>Developed efficient teller box balancing skills, completing process within 15 minutes after closing</li>
+                        <li>Processed utility bill payments, doctor channeling, and other-bank cheque entries</li>
+                        <li>Selected as trainer for new staff within 4 months of employment</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Banking Systems</h3>
+                        <ul class="skill-list">
+                            <li>Finacle Banking System</li>
+                            <li>Digital Banking Platforms</li>
+                            <li>Sampath Vishwa</li>
+                            <li>Internal Card Management System (CMS)</li>
+                            <li>Card Issuance & Verification</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Software & Technology</h3>
+                        <ul class="skill-list">
+                            <li>Microsoft Excel (Advanced)</li>
+                            <li>Adobe Photoshop</li>
+                            <li>Xilisoft Movie Maker</li>
+                            <li>AI Tools (Currently Learning)</li>
+                            <li>Automated Scheduling Systems</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul class="skill-list">
+                            <li>English (Professional)</li>
+                            <li>Sinhala (Native)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Core Strengths</h2>
+                <div class="strengths-grid">
+                    <div class="strength-item">
+                        <div class="strength-icon">💬</div>
+                        <h3>Communication & Problem-Solving</h3>
+                        <p>Exceptional ability to communicate with diverse customers and resolve complex banking issues efficiently.</p>
+                    </div>
+                    <div class="strength-item">
+                        <div class="strength-icon">🤝</div>
+                        <h3>Teamwork & Integrity</h3>
+                        <p>Strong collaborative skills combined with unwavering honesty and ethical standards in all professional interactions.</p>
+                    </div>
+                    <div class="strength-item">
+                        <div class="strength-icon">⚡</div>
+                        <h3>Pressure Management & Multitasking</h3>
+                        <p>Proven ability to excel under heavy pressure while managing multiple priorities with meticulous attention to detail.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2025 Suresh Lasantha Basnayake. Ready to contribute to New Zealand's banking and administrative sectors.</p>
+        </footer>
+    </div>
+</body>
+</html>
